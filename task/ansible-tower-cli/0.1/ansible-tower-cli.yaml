@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1beta1
 kind: Task
 metadata:
-  name: ansible-tower-cli
+  name: ansible-tower-cli-custom-catalog-task
   labels:
     app.kubernetes.io/version: "0.1"
   annotations:
@@ -42,16 +42,16 @@ spec:
     - name: config
       image: quay.io/rcmendes/ansible-tower-cli@sha256:3a61778f410526db8d6e02e87715d58ee770c4a4faf57ac408cb5ec1a025ef2c #tag: latest
       command:
-        - '/bin/sh'
-        - '-c'
+        - "/bin/sh"
+        - "-c"
       args:
         - |-
-            echo -e "verify_ssl = $(params.SSLVERIFY)\nverbose = true\nhost = $(params.HOST)\nusername = $USER\npassword = $PASS" > ~/.tower_cli.cfg
-            chmod 600 ~/.tower_cli.cfg
-            echo "Generated tower_cli.cfg file"
-            echo "-----------------------------"
-            ls -lah ~/ | grep tower_cli
-            echo "-----------------------------"
+          echo -e "verify_ssl = $(params.SSLVERIFY)\nverbose = true\nhost = $(params.HOST)\nusername = $USER\npassword = $PASS" > ~/.tower_cli.cfg
+          chmod 600 ~/.tower_cli.cfg
+          echo "Generated tower_cli.cfg file"
+          echo "-----------------------------"
+          ls -lah ~/ | grep tower_cli
+          echo "-----------------------------"
       env:
         - name: USER
           valueFrom:
