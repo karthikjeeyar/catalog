@@ -8,7 +8,7 @@ metadata:
     tekton.dev/pipelines.minVersion: "0.12.1"
     tekton.dev/categories: CLI
     tekton.dev/tags: ansible, cli
-    tekton.dev/displayName: "ansible tower cli"
+    tekton.dev/displayName: "ansible tower cli (custom)"
     tekton.dev/platforms: "linux/amd64"
 spec:
   description: >-
