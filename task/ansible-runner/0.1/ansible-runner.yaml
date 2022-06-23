@@ -2,7 +2,7 @@
 apiVersion: tekton.dev/v1beta1
 kind: Task
 metadata:
-  name: ansible-runner-custom-catalog-task
+  name: ansible-runner
   labels:
     app.kubernetes.io/version: "0.1"
     app.kubernetes.io/ansible-version: "2.9.20"
