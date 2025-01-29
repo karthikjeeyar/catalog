@@ -11,6 +11,7 @@ keywords: # (optional)
 links: # (optional)
   - name: Title of the link (required for each link)
     url: URL of the link (required for each link)
+random: hello-world
 install: | # (optional)
   Brief install instructions in markdown format
 
